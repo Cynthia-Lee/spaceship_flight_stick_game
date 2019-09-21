@@ -46,6 +46,8 @@ We are making a flight stick, so make sure this fits nicely in your grip.
 I personally used a small M&M canister and fit it on top of the joystick. To help it fit snugly, I took some bubble wrap packaging to stuff around the circumference of the canister.
 You could try 3D printing your own stick or use more cardboard and roll it up into a cylinder. Just make sure you can also put the button on top of the cylinder!
 
+![Flight Stick](images/flightstick.jpg)
+
 ## Set Up the Arduino
 ### Download the Arduino Code
 I've written the Arduino code for this project.
@@ -61,6 +63,8 @@ Prepare your jumper wires. If they are too short, connect a male and female jump
 The joystick's axis is mapped to pin A0 (x-axis) and pin A1 (y-axis) by default. I did not map the joystick's button because I didn't need it. Ground is pinned to the Leonardo's ground.
 Connect the Leonardo's 5v to positive on the breadboard. (Since we have the both joystick and the button, we need a jumper wire to have the positive available)
 The button is mapped to pin 9. Have a jumper wire for the positive to the breadboard. Have a jumper wire for ground to the Leonardo.
+
+![Schematic](images/schematic.png)
 
 ## Make the Arduino Leonardo read as an Xbox Controller
 The reason I want it to read as an Xbox controller is because Godot only supports main brand controllers. It doesn't support a normal USB controller, which is the default of what Arduino Leonardo is read as.
