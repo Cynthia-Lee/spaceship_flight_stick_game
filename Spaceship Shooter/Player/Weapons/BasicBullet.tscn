@@ -3,13 +3,13 @@
 [ext_resource path="res://BasicBullet.gd" type="Script" id=1]
 
 [sub_resource type="CubeMesh" id=1]
-size = Vector3( 1, 1, 2 )
+size = Vector3( 2, 2, 4 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.219608, 0.945098, 1, 1 )
 
 [sub_resource type="ConvexPolygonShape" id=3]
-points = PoolVector3Array( -5, 5, 10, 5, 5, -10, 5, 5, 10, -5, 5, -10, -5, -5, 10, 5, -5, -10, 5, -5, 10, -5, -5, -10, 5, 5, 10, -5, 5, -10, 5, 5, -10, -5, 5, 10, 5, -5, 10, -5, -5, -10, 5, -5, -10, -5, -5, 10, 5, 5, 10, -5, -5, 10, -5, 5, 10, 5, -5, 10, 5, 5, -10, -5, -5, -10, -5, 5, -10, 5, -5, -10 )
+points = PoolVector3Array( -1, 1, 2, 1, 1, -2, 1, 1, 2, -1, 1, -2, -1, -1, 2, 1, -1, -2, 1, -1, 2, -1, -1, -2, 1, 1, 2, -1, 1, -2, 1, 1, -2, -1, 1, 2, 1, -1, 2, -1, -1, -2, 1, -1, -2, -1, -1, 2, 1, 1, 2, -1, -1, 2, -1, 1, 2, 1, -1, 2, 1, 1, -2, -1, -1, -2, -1, 1, -2, 1, -1, -2 )
 
 [node name="BasicBullet" type="Area"]
 script = ExtResource( 1 )

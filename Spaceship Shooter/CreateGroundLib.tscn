@@ -1,23 +1,26 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.466667, 0.945098, 0.0705882, 1 )
+[sub_resource type="AtlasTexture" id=1]
 
-[sub_resource type="CubeMesh" id=2]
-material = SubResource( 1 )
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.807843, 0.309804, 0.0705882, 1 )
+roughness_texture = SubResource( 1 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
 size = Vector3( 10, 2, 10 )
 
-[sub_resource type="ConvexPolygonShape" id=3]
+[sub_resource type="ConvexPolygonShape" id=4]
 points = PoolVector3Array( -5, 1, 5, 5, 1, -5, 5, 1, 5, -5, 1, -5, -5, -1, 5, 5, -1, -5, 5, -1, 5, -5, -1, -5, 5, 1, 5, -5, 1, -5, 5, 1, -5, -5, 1, 5, 5, -1, 5, -5, -1, -5, 5, -1, -5, -5, -1, 5, 5, 1, 5, -5, -1, 5, -5, 1, 5, 5, -1, 5, 5, 1, -5, -5, -1, -5, -5, 1, -5, 5, -1, -5 )
 
-[sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.866667, 0.607843, 0.054902, 1 )
+[sub_resource type="SpatialMaterial" id=19]
+albedo_color = Color( 0.701961, 0.180392, 0.180392, 1 )
 
-[sub_resource type="CubeMesh" id=5]
-material = SubResource( 4 )
+[sub_resource type="CubeMesh" id=13]
+material = SubResource( 19 )
 size = Vector3( 10, 2, 10 )
 
-[sub_resource type="ConvexPolygonShape" id=6]
+[sub_resource type="ConvexPolygonShape" id=14]
 points = PoolVector3Array( -5, 1, 5, 5, 1, -5, 5, 1, 5, -5, 1, -5, -5, -1, 5, 5, -1, -5, 5, -1, 5, -5, -1, -5, 5, 1, 5, -5, 1, -5, 5, 1, -5, -5, 1, 5, 5, -1, 5, -5, -1, -5, 5, -1, -5, -5, -1, 5, 5, 1, 5, -5, -1, 5, -5, 1, 5, 5, -1, 5, 5, 1, -5, -5, -1, -5, -5, 1, -5, 5, -1, -5 )
 
 [node name="GridMap" type="GridMap"]
@@ -29,20 +32,21 @@ __meta__ = {
 }
 
 [node name="Grass" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7034, 0.133243, 0.171179 )
+mesh = SubResource( 3 )
 material/0 = null
 
 [node name="StaticBody" type="StaticBody" parent="Grass"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Grass/StaticBody"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
-[node name="Dirt" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 1 )
-mesh = SubResource( 5 )
+[node name="Grass2" type="MeshInstance" parent="."]
+transform = Transform( 0.999587, 0.0287427, 0, -0.0287427, 0.999587, 0, 0, 0, 1, 0.463719, 1.73212, -1.26167 )
+mesh = SubResource( 13 )
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="Dirt"]
+[node name="StaticBody" type="StaticBody" parent="Grass2"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Dirt/StaticBody"]
-shape = SubResource( 6 )
+[node name="CollisionShape" type="CollisionShape" parent="Grass2/StaticBody"]
+shape = SubResource( 14 )

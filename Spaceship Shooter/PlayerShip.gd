@@ -4,6 +4,7 @@ signal fire_bullet
 
 var ready_to_shoot = true
 
+
 # make ship lean
 var turn_right = false
 var turn_left = false
@@ -16,8 +17,8 @@ var velocity = Vector3()
 
 onready var movement_guide = $MovementGuide
 
-var turn_speed = 35
-var speed = 100 # movement speed
+var turn_speed = 45
+var speed = 70 # movement speed
 # 140
 
 func _ready():

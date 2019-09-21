@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/spaceCraft4.obj-78734a33a2ae4be41a015149be853fd1.mesh"
+path="res://.import/spaceCraft4.obj-d7c24fbd3845d89d881b35c7c8e68279.mesh"
 
 [deps]
 
-files=[ "res://.import/spaceCraft4.obj-78734a33a2ae4be41a015149be853fd1.mesh" ]
+files=[ "res://.import/spaceCraft4.obj-d7c24fbd3845d89d881b35c7c8e68279.mesh" ]
 
-source_file="res://Player/Assets/spaceCraft4.obj"
-dest_files=[ "res://.import/spaceCraft4.obj-78734a33a2ae4be41a015149be853fd1.mesh", "res://.import/spaceCraft4.obj-78734a33a2ae4be41a015149be853fd1.mesh" ]
+source_file="res://Spaceship Shooter/Player/Assets/spaceCraft4.obj"
+dest_files=[ "res://.import/spaceCraft4.obj-d7c24fbd3845d89d881b35c7c8e68279.mesh", "res://.import/spaceCraft4.obj-d7c24fbd3845d89d881b35c7c8e68279.mesh" ]
 
 [params]
 
