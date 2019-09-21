@@ -111,8 +111,15 @@ https://www.youtube.com/playlist?list=PLGyWVeC9tYcAyZbd7vyO_ivY2-YoEPRsJ
 Follow the instructions, except change the following:
 As you can see, in the tutorial, the player ship script controls take in an "up", "left", "bottom", "right" input. It is mapped to W A S D. 
 Go to "Project Settings" > "Input Map" 
+
 Add "up" and map the controller's input, "Axis 1, -" and "W"
+
 Add  "down" and map the controller's input, "Axis 1, +" and "S"
+
 Add  "left" and map the controller's input, "Axis 0, -" and "A"
+
 Add  "right" and map the controller's input, "Axis 0, +" and "D"
+
 Add "shoot" and map the controller's input, "0: PS Cross, XBox A, Nintendo B" and "space"
+
+Video demo: https://drive.google.com/file/d/1NHQA1J1y07O7E57R7sDZFCLTR5pcgcpt/view?fbclid=IwAR3w65eBWXsUykM9uTHNklo7pooXH_tbvtq3pxS6PELrD1tTlSM0ZHj7XQ4
