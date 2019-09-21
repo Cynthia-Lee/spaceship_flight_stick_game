@@ -1,31 +1,50 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Ground.res" type="MeshLibrary" id=2]
-[ext_resource path="res://PlayerShip.tscn" type="PackedScene" id=3]
+[ext_resource path="res://PlayerShip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ground.res" type="MeshLibrary" id=3]
 
-[sub_resource type="PlaneMesh" id=1]
+[sub_resource type="Curve3D" id=1]
+_data = {
+"points": PoolVector3Array(  ),
+"tilts": PoolRealArray(  )
+}
+
+[sub_resource type="PlaneMesh" id=2]
 size = Vector2( 15, 2 )
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0.0526316, 0.309942, 0.643275, 0.918129, 1 )
 colors = PoolColorArray( 0.0483856, 0.589844, 0.564463, 1, 0.8125, 0.142822, 0.142822, 1, 0, 0.128326, 0.566406, 1, 0.988037, 0.617188, 1, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
-[sub_resource type="SpatialMaterial" id=4]
-albedo_texture = SubResource( 3 )
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = SubResource( 4 )
 
 [node name="Game" type="Spatial" groups=[
 "game",
 ]]
 script = ExtResource( 1 )
 
+[node name="Path" type="Path" parent="."]
+curve = SubResource( 1 )
+
+[node name="Dolly" type="PathFollow" parent="Path"]
+rotation_mode = 0
+
+[node name="Camera" type="Camera" parent="Path/Dolly"]
+
+[node name="PositionGuide" type="Position3D" parent="Path/Dolly"]
+
+[node name="PlayerShip" parent="Path/Dolly" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 13, 25 )
+
 [node name="World" type="Spatial" parent="."]
 
 [node name="Ground" type="GridMap" parent="World"]
-mesh_library = ExtResource( 2 )
+mesh_library = ExtResource( 3 )
 cell_size = Vector3( 10, 2, 10 )
 data = {
 "cells": PoolIntArray(  )
@@ -37,10 +56,13 @@ __meta__ = {
 [node name="MeshInstance" type="MeshInstance" parent="World"]
 transform = Transform( -4.37114e-006, 0, 90, 0, 1, 0, -100, 0, -3.93402e-006, 0, 0, 0 )
 visible = false
-mesh = SubResource( 1 )
-material/0 = SubResource( 4 )
-
-[node name="PlayerShip" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 13, 25 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 5 )
 
 [node name="BulletContainer" type="Spatial" parent="."]
+
+[node name="EnemyContainer" type="Spatial" parent="."]
+
+[node name="SpawnEnemy" type="Timer" parent="EnemyContainer"]
+wait_time = 5.0
+[connection signal="timeout" from="EnemyContainer/SpawnEnemy" to="." method="_on_SpawnEnemy_timeout"]
