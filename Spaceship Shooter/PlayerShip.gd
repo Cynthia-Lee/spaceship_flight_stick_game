@@ -1,11 +1,15 @@
 extends KinematicBody
 
+signal fire_bullet
+
+var ready_to_shoot = true
+
 # make ship lean
 var turn_right = false
 var turn_left = false
 
 var rot_x = 0.0
-var rot_y = 0.0
+var rot_y = 180.0
 var rot_z = 0.0
 
 var velocity = Vector3()
@@ -15,6 +19,10 @@ onready var movement_guide = $MovementGuide
 var turn_speed = 35
 var speed = 100 # movement speed
 # 140
+
+func _ready():
+	for node in get_tree().get_nodes_in_group("game"):
+		connect("fire_bullet", node, "_fire_bullet")
 
 func _physics_process(delta):
 	get_input(delta)
@@ -67,7 +75,7 @@ func get_input(delta):
 		# translate(transform.basis.x * speed * delta)
 		# Strafe
 		# rot_y += -turn_speed * delta
-		velocity += movement_guide.transform.basis.x * speed / 2
+		velocity += -movement_guide.transform.basis.x * speed / 2
 		
 		turn_right = true
 	elif rot_z < 0.0: # make ship level out
@@ -81,7 +89,7 @@ func get_input(delta):
 		
 		# Strafe
 		# rotate_y(delta)
-		velocity += -movement_guide.transform.basis.x * speed / 2
+		velocity += movement_guide.transform.basis.x * speed / 2
 		
 		turn_left = true
 	elif rot_z > 0.0:
@@ -90,3 +98,17 @@ func get_input(delta):
 	rotation_degrees.x = rot_x
 	rotation_degrees.y = rot_y
 	rotation_degrees.z = rot_z
+	
+	# shoot
+	if Input.is_action_pressed("shoot"):
+		if ready_to_shoot:
+			ready_to_shoot = false
+			$GunContainer/GunTimer.start()
+			# Tell Root node where to add bullets
+			var trans = $GunContainer/MuzzleLeft.global_transform
+			emit_signal("fire_bullet", trans)
+			trans = $GunContainer/MuzzleRight.global_transform
+			emit_signal("fire_bullet", trans)
+
+func _on_GunTimer_timeout():
+	ready_to_shoot = true

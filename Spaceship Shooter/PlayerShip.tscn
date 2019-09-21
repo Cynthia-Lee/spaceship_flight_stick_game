@@ -41,3 +41,15 @@ current = true
 far = 400.0
 
 [node name="MovementGuide" type="Spatial" parent="."]
+
+[node name="GunContainer" type="Spatial" parent="."]
+
+[node name="MuzzleRight" type="Position3D" parent="GunContainer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.44641, 2.22231, -9.54857 )
+
+[node name="MuzzleLeft" type="Position3D" parent="GunContainer"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45826, 2.23317, -9.70264 )
+
+[node name="GunTimer" type="Timer" parent="GunContainer"]
+wait_time = 0.25
+[connection signal="timeout" from="GunContainer/GunTimer" to="." method="_on_GunTimer_timeout"]
