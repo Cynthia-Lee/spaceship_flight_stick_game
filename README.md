@@ -46,6 +46,8 @@ We are making a flight stick, so make sure this fits nicely in your grip.
 I personally used a small M&M canister and fit it on top of the joystick. To help it fit snugly, I took some bubble wrap packaging to stuff around the circumference of the canister.
 You could try 3D printing your own stick or use more cardboard and roll it up into a cylinder. Just make sure you can also put the button on top of the cylinder!
 
+(I chose an M&M canister because I didn't have time to 3D print a handle during the hackathon.)
+
 ![Flight Stick](images/flightstick.jpg)
 
 ## Set Up the Arduino
