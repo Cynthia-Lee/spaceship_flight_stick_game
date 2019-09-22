@@ -50,6 +50,8 @@ You could try 3D printing your own stick or use more cardboard and roll it up in
 
 ![Flight Stick](images/flightstick.jpg)
 
+![Flight Stick with Wires](images/flightstick_wires.jpg)
+
 ## Set Up the Arduino
 ### Download the Arduino Code
 I've written the Arduino code for this project.
