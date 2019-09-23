@@ -20,11 +20,13 @@ Also check out our devpost for this project: https://devpost.com/software/spaces
 ### Arduino IDE
 Download the Arduino IDE
 You can download it here: https://www.arduino.cc/en/main/software
-If you don't want to download it you can also use their online compiler, though downloading it is recommended. Don't forget to get the correct version 
+
+If you don't want to download it you can also use their online compiler, though downloading it is recommended. Don't forget to get the correct version. 
 
 ### Godot
 Download the Godot Software
 You can download it here: https://godotengine.org/download/
+
 You can also read more information about it here: https://docs.godotengine.org/en/3.1/
 
 I chose Godot to use because of its easy compatibility with reading and assigning inputs from keys or controllers. It is straightforward to use much more lightweight than other game engines such as Unity. We aren't making a graphical heavy game.
@@ -32,8 +34,11 @@ Godot is rising in popularity and I found out about it recently by  watching You
 
 Feel free to check those videos out here:
 https://www.youtube.com/watch?v=U3TI2lleCYU
+
 https://www.youtube.com/watch?v=FEiNBVVCq_A
+
 https://www.youtube.com/watch?v=s0I4Xcr5MVw
+
 
 ## Creating the Flight Stick
 ### Box
@@ -62,7 +67,7 @@ Download it here: https://github.com/Cynthia-Lee/arduino_joystick_with_button
 Download both the library and the Arduino code.
 
 ### Arduino Leonardo
-Check if your computer can read in your Arduino Leonardo
+Check if your computer can read in your Arduino Leonardo.
 Plug in your Leonardo to your computer with a USB to micro USB adapter.
 Go to or press the Windows home button. Search "Set up USB game controllers". Check that your Arduino Leonardo is listed in the window.
 
@@ -76,7 +81,7 @@ The button is mapped to pin 9. Have a jumper wire for the positive to the breadb
 
 ## Make the Arduino Leonardo read as an Xbox Controller
 The reason I want it to read as an Xbox controller is because Godot only supports main brand controllers. It doesn't support a normal USB controller, which is the default of what Arduino Leonardo is read as.
-Godot supports the following controllers: PS, Nintendo, Xbox
+Godot supports the following controllers: PS, Nintendo, Xbox.
 If you don't want it to be read as an Xbox controller, you can also make it either a PS or Nintendo one. You can skip this step if you want to have your Leonardo read as those. 
 I've chosen Xbox as it seemed like the easiest option. 
 
@@ -109,7 +114,9 @@ Make sure to have the x360ce 32 or 64 bit match this Joystick's 32 or 64 bit.
 
 Take your x360ce files. Move it to the same directory (folder) as the executable (exe) Joystick file you just made. Run the exe, and test out your controller! Your controller should be read as an XInput. This is indicated on top in green text. When you move the joystick and button, it should be shown highlighted on the controller diagram in green.
 
-You can now make any Arduino Leonardo controller. You just need to edit the Arduino code, map the x360ce buttons, and then move the x360ce files to the same directory as the game's exe file. If it isn't read, just change the xinput file name, as mentioned in the GitHub x360ce read me.
+With this tutorial of having your Arduino Leonardo read as an Xbox controller, you can make any type of controller you want. You just need to edit the Arduino code, map the x360ce buttons, and then move the x360ce files to the same directory as the game's exe file. If it isn't read, just change the xinput file name, as mentioned in the GitHub x360ce read me.
+
+(I've tested my flightstick on Borderlands 2, and it works! Even though it is just a joystick and 1 button... Not much controls for now.)
 
 ## Godot Game
 Time to test our flight stick controller and code the Godot game!
