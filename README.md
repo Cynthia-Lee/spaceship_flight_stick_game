@@ -54,8 +54,12 @@ You could try 3D printing your own stick or use more cardboard and roll it up in
 
 ## Set Up the Arduino
 ### Download the Arduino Code
+I used the Aruduino Joystick Library in my code. Follow instructions to download it here: https://github.com/MHeironimus/ArduinoJoystickLibrary
+
 I've written the Arduino code for this project.
 Download it here: https://github.com/Cynthia-Lee/arduino_joystick_with_button
+
+Download both the library and the Arduino code.
 
 ### Arduino Leonardo
 Check if your computer can read in your Arduino Leonardo
