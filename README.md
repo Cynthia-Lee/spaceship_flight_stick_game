@@ -1,10 +1,10 @@
-# spaceship_flight_stick
+# spaceship_flight_stick_game
 
 Proto Builds - Flight Stick
 
 Created for SBUHacks 2019.
 
-Using an Arduino Leonardo for joystick and button controls. We made a makeshift flight stick and game to use it on!
+We made a makesift flight stick using an Arduino Leonardo with joystick and button controls. We also made a 3-d game that can be played with the controller.
 
 Hardware: Arduino Leonardo, joystick, push button
 
@@ -21,7 +21,7 @@ Also check out our devpost for this project: https://devpost.com/software/spaces
 Download the Arduino IDE
 You can download it here: https://www.arduino.cc/en/main/software
 
-If you don't want to download it you can also use their online compiler, though downloading it is recommended. Don't forget to get the correct version. 
+If you don't want to download it, you can use their online compiler. However, downloading it is recommended. Don't forget to get the correct version. 
 
 ### Godot
 Download the Godot Software
@@ -29,8 +29,8 @@ You can download it here: https://godotengine.org/download/
 
 You can also read more information about it here: https://docs.godotengine.org/en/3.1/
 
-I chose Godot to use because of its easy compatibility with reading and assigning inputs from keys or controllers. It is straightforward to use much more lightweight than other game engines such as Unity. We aren't making a graphical heavy game.
-Godot is rising in popularity and I found out about it recently by  watching Youtube videos of game developers describing Godot's usefulness and why they switched over.
+I chose to use Godot because of its easy compatibility with reading and assigning inputs from keys or controllers. It is straightforward to use and much more lightweight than other game engines such as Unity. We are also not making a graphical heavy game.
+Godot is rising in popularity and I found out about it recently from watching Youtube videos of game developers describing Godot's usefulness and why they switched over.
 
 Feel free to check those videos out here:
 https://www.youtube.com/watch?v=U3TI2lleCYU
@@ -42,7 +42,7 @@ https://www.youtube.com/watch?v=s0I4Xcr5MVw
 
 ## Creating the Flight Stick
 ### Box
-The box is used to create a flat platform to put your joystick on that is easy to hold.
+The box is used to create a flat platform to put your joystick on so that it is easy to hold.
 Cut it your cardboard box into a cube that fits nicely in your palm. I find that around 7cm per edge of the cube is a nice size.
 Feel free to use other materials and experiment with different box sizes to see what you like the best! 
 
